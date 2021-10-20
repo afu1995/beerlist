@@ -2,8 +2,11 @@ import './App.css';
 import { useState} from 'react'
 import BeerList from './components/BeerList';
 import Header from './components/Header';
+import AddBeer from './components/AddBeer';
 
 function App () {
+  const [showAddBeer, setShowAddBeer] = useState (false)
+
   //Fordel at have dem i App.js så de eventuelt kan bruges i andre components end bare BeerList
   const [beers, setBeers] = useState([
     {
@@ -36,6 +39,14 @@ function App () {
     }
 ])
 
+// Add beer
+const addBeer = (beer) => {
+  const id = Math.floor(Math.random() * 1000) + 1
+
+  const newBeer = {id, ...beer}
+  setBeers([...beers, newBeer])
+}
+
 // Delete Beer
 // Filter = High order array method which takes in a function
 // Im showing the beer.id thats NOT equal to the ID
@@ -55,7 +66,8 @@ const toggleInformation = (id) => {
 
   return (
     <div className="container">
-      <Header />
+      <Header onAdd={() => setShowAddBeer(!showAddBeer)}/>
+      {showAddBeer && <AddBeer onAdd={addBeer} />}
       {beers.length > 0 ? <BeerList beers={beers} onDelete={deleteBeer} onToggle={toggleInformation} /> : 'No beers left'}
     </div>
     

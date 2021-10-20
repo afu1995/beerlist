@@ -3,17 +3,12 @@ import Button from './Button'
 import BeerList from './BeerList'
 
 
-function Header(props) {
-    const onClick = () => {
-        console.log('click')
-    }
-
-
+function Header({title, onAdd}) {
 
     return (
         <header className="header">
-            <h1>{props.title}</h1>
-            <Button color='green' text='Add beer' onClick={onClick}/>
+            <h1>{title}</h1>
+            <Button color='green' text='Add beer' onClick={onAdd}/>
             {BeerList}
         </header>
     )
