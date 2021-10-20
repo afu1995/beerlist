@@ -26,17 +26,14 @@ function AddBeer({onAdd}) {
     return (
         <form className="add-form" onSubmit={onSubmit}>
             <div className="form-control">
-                <label>Beer</label>
                 <input type='text' placeholder='Add beer' value={name} onChange={(e) => setName(e.target.value)}/>
             </div>
 
             <div className="form-control">
-                <label>Year</label>
                 <input type='text' placeholder='Add beer year' value={year} onChange={(e) => setYear(e.target.value)} />
             </div>
 
             <div className="form-control">
-                <label>Describtion</label>
                 <input type='text' placeholder='Add beer describtion' value={detail} onChange={(e) => setDetail(e.target.value)}/>
             </div>
 

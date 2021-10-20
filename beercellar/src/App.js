@@ -7,6 +7,7 @@ import AddBeer from './components/AddBeer';
 function App () {
   const [showAddBeer, setShowAddBeer] = useState (false)
 
+
   //Fordel at have dem i App.js så de eventuelt kan bruges i andre components end bare BeerList
   const [beers, setBeers] = useState([
     {
@@ -66,9 +67,9 @@ const toggleInformation = (id) => {
 
   return (
     <div className="container">
-      <Header onAdd={() => setShowAddBeer(!showAddBeer)}/>
+      <Header onAdd={() => setShowAddBeer(!showAddBeer)} showAdd={showAddBeer}/>
       {showAddBeer && <AddBeer onAdd={addBeer} />}
-      {beers.length > 0 ? <BeerList beers={beers} onDelete={deleteBeer} onToggle={toggleInformation} /> : 'No beers left'}
+      {beers.length > 0 ? <BeerList beers={beers} onDelete={deleteBeer} onToggle={toggleInformation}/> : 'No beers left'}
     </div>
     
   )
