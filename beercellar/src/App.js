@@ -14,28 +14,28 @@ function App () {
         id: 1,
         name: 'Tuborg',
         year: 1965,
-        detail: 'Good beer',
+        detail: 'good beer',
         focus: false
     },
     {
         id: 2,
         name: 'Carlsberg',
         year: 1980,
-        detail: 'Okay beer',
+        detail: 'okay beer',
         focus: false
     },
     {
         id: 3,
         name: 'Grimberger',
         year: 1920,
-        detail: 'Dark beer',
+        detail: 'dark beer',
         focus: false
     },
     {
         id: 4,
         name: 'Budweiser',
         year: 1967,
-        detail: 'Great beer',
+        detail: 'great beer',
         focus: false
     }
 ])

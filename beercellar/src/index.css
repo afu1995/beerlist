@@ -59,8 +59,16 @@ body {
   cursor: pointer;
 }
 
+.beer:hover{
+  background-color: #f1f1f1;
+  
+}
+
 .beer.focus {
   border-left: 5px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .beer h3 {
